@@ -11,7 +11,7 @@
 <body>
   <div id="app" class="app">
     <header class="app__header">
-      <section id="volume">
+      <section id="volume" class="volume">
         <div class="volume__group">
           <label for="volume-sfx">SFX</label>
           <input id="volume-sfx" name="volume-sfx" type="range" min="0" max="1" value="0.25" step="0.01">
@@ -24,22 +24,29 @@
     </header>
 
     <main class="app__main">
+
       <section class="simon">
-        <button id="simon-green" class="btn btn--green simon__button" disabled>
-        </button>
-        <button id="simon-red" class="btn btn--red simon__button" disabled>
-        </button>
-        <button id="simon-yellow" class="btn btn--yellow simon__button" disabled>
-        </button>
-        <button id="simon-blue" class="btn btn--blue simon__button" disabled>
-        </button>
-        <div class="simon__logo">
-          <button id="game-play" class="btn btn--primary simon__logo__play">Play</button>
-          <span id="simon-logo" class="simon__logo__simon">
-            <p>SIMON</p>
-            <p>SAYS</p>
-          </span>
-        </div>
+        <header class="simon__header">
+          <h2>Score: <span id="score">0</span></h2>
+          <h2>Stage: <span id="stage">0</span></h2>
+        </header>
+        <article class="simon__game">
+          <button id="simon-green" class="btn btn--green simon__button" disabled>
+          </button>
+          <button id="simon-red" class="btn btn--red simon__button" disabled>
+          </button>
+          <button id="simon-yellow" class="btn btn--yellow simon__button" disabled>
+          </button>
+          <button id="simon-blue" class="btn btn--blue simon__button" disabled>
+          </button>
+          <div class="simon__logo">
+            <button id="game-play" class="btn btn--primary simon__logo__play">Play</button>
+            <span id="simon-logo" class="simon__logo__simon">
+              <p>SIMON</p>
+              <p>SAYS</p>
+            </span>
+          </div>
+        </article>
       </section>
     </main>
 

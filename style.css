@@ -9,7 +9,7 @@
 }
 
 *,
-::after,
+::before,
 ::before {
   box-sizing: border-box;
 }
@@ -55,30 +55,28 @@ p {
 
 .btn--green {
   background-color: var(--color-green);
-  clip-path: polygon(40% 0, 100% 0, 100% 100%, 0 100%, 0 40%);
-
 }
 
 .btn--red {
   background-color: var(--color-red);
-  clip-path: polygon(60% 0, 100% 40%, 100% 100%, 0 100%, 0 0);
 }
 
 .btn--yellow {
   background-color: var(--color-yellow);
-  clip-path: polygon(100% 0, 100% 100%, 40% 100%, 0 60%, 0 0);
 }
 
 .btn--blue {
   background-color: var(--color-blue);
-  clip-path: polygon(100% 0, 100% 60%, 60% 100%, 0 100%, 0 0);
 }
 
 .app {
   height: 100%;
   width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
   display: grid;
-  grid-template-rows: 70px 1fr 100px;
+  gap: 1rem;
+  grid-template-rows: 100px 1fr 70px;
   grid-template-areas:
     "header"
     "main"
@@ -87,32 +85,75 @@ p {
 
 .app__header {
   grid-area: header;
+  display: flex;
+  align-items: center;
+}
+
+.volume {
+  margin-left: auto;
+  padding: 0 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.volume__group {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-color);
+  padding: .5rem 1rem;
 }
 
 .app__main {
   grid-area: main;
-  display: grid;
 }
 
-.app__main__header {
-  display: grid;
+.simon {}
+
+.simon__header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  max-width: 768px;
+  margin: auto;
 }
 
-.simon {
+.simon__header h2 {
+  margin: 0;
+  background: var(--primary-color);
+  padding: 1rem;
+  width: 100%;
+}
+
+.simon__game {
   aspect-ratio: 1/1;
   width: 100%;
   max-width: 500px;
   min-width: 300px;
-  margin: auto;
   display: grid;
+  margin: 0 auto;
   grid-template-columns: repeat(2, 1fr);
-  overflow: hidden;
   padding: 1rem;
   gap: 1rem;
   position: relative;
 }
 
-.simon__button {}
+.simon__button:nth-child(1) {
+  clip-path: polygon(40% 0, 100% 0, 100% 100%, 0 100%, 0 40%);
+  filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+}
+
+.simon__button:nth-child(2) {
+  clip-path: polygon(60% 0, 100% 40%, 100% 100%, 0 100%, 0 0);
+}
+
+.simon__button:nth-child(3) {
+  clip-path: polygon(100% 0, 100% 100%, 40% 100%, 0 60%, 0 0);
+}
+
+.simon__button:nth-child(4) {
+  clip-path: polygon(100% 0, 100% 60%, 60% 100%, 0 100%, 0 0);
+}
 
 .simon__logo {
   position: absolute;
@@ -134,7 +175,6 @@ p {
   animation: pulse 2s linear infinite;
   text-transform: uppercase;
   padding: .5rem;
-  border-radius: 5px;
   font-weight: bold;
 }
 

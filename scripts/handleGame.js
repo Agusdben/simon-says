@@ -9,7 +9,8 @@ const $simonGreen = document.getElementById('simon-green')
 const $simonRed = document.getElementById('simon-red')
 const $simonYellow = document.getElementById('simon-yellow')
 const $simonBlue = document.getElementById('simon-blue')
-
+const $score = document.getElementById('score')
+const $stage = document.getElementById('stage')
 const simonButtons = [$simonGreen, $simonRed, $simonYellow, $simonBlue]
 
 const $audioSFX = document.getElementById('audio-sfx')
@@ -28,7 +29,6 @@ const animateBtn = (btn, duration) => {
 const playBtnSong = btn => {
   const id = btn.getAttribute('id')
   const $sourceSFX = document.getElementById('source-sfx')
-  console.log($sourceSFX)
   $sourceSFX.src = `./SFX/${id}.mp3`
   $audioSFX.load()
   $audioSFX.play()
@@ -68,12 +68,15 @@ const handleSimonBtn = btn => {
 
   enableSimonBtns()
 
+  game.score += 1
+  $score.innerText = game.score
+
   if (game.currentPlayerAttempt === game.pattern.length - 1) {
     addToPattern()
     showPattern()
+    $stage.innerText = game.pattern.length
     return
   }
-  game.score += 1
   game.currentPlayerAttempt++
 }
 
@@ -105,6 +108,8 @@ export const handleGame = () => {
   $playBtn.style.display = 'none'
   $simonLogo.style.display = 'block'
   $audioMusic.play()
+  $score.innerText = '0'
+  $stage.innerText = '0'
   game = {
     pattern: [],
     currentPlayerAttempt: 0,
