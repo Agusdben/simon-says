@@ -215,9 +215,10 @@ p {
 
 .app__footer__link {
   color: var(--primary-color);
+  font-weight: bolder;
+  text-decoration: none;
 }
 
 .app__footer__link:hover {
-  transition: filter 200ms linear;
   filter: brightness(200%);
 }
