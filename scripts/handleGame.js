@@ -13,6 +13,7 @@ const $simonBlue = document.getElementById('simon-blue')
 const simonButtons = [$simonGreen, $simonRed, $simonYellow, $simonBlue]
 
 const $audioSFX = document.getElementById('audio-sfx')
+const $audioMusic = document.getElementById('audio-music')
 let game = {}
 
 const animateBtn = (btn, duration) => {
@@ -103,6 +104,7 @@ export const handleGame = () => {
   $playBtn.setAttribute('disabled', 'true')
   $playBtn.style.display = 'none'
   $simonLogo.style.display = 'block'
+  $audioMusic.play()
   game = {
     pattern: [],
     currentPlayerAttempt: 0,
