@@ -1,6 +1,6 @@
 const $volumeMusic = document.getElementById('volume--music')
 const $audioMusic = document.getElementById('audio-music')
-$volumeMusic.load()
+$audioMusic.load()
 $volumeMusic.setAttribute(
   'value',
   window.localStorage.getItem('volume-music') || $audioMusic.value
