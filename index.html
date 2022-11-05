@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simon says</title>
+</head>
+
+<body>
+  <div id="app" class="app">
+    <header class="app__header">
+      <section id="volume">
+        <div class="volume__group">
+          <label for="volume-sfx">SFX</label>
+          <input id="volume-sfx" name="volume-sfx" type="range" min="0" max="1" value="0.25" step="0.01">
+        </div>
+        <div class="volume__group">
+          <label for="volume-music">Music</label>
+          <input id="volume--music" name="volume-music" type="range" min="0" max="1" value="0.25" step="0.01">
+        </div>
+      </section>
+    </header>
+
+    <main class="app__main">
+      <section class="simon">
+        <button id="simon-green" class="btn btn--green simon__button" disabled>
+        </button>
+        <button id="simon-red" class="btn btn--red simon__button" disabled>
+        </button>
+        <button id="simon-yellow" class="btn btn--yellow simon__button" disabled>
+        </button>
+        <button id="simon-blue" class="btn btn--blue simon__button" disabled>
+        </button>
+        <div class="simon__logo">
+          <button id="game-play" class="btn btn--primary simon__logo__play">Play</button>
+          <span id="simon-logo" class="simon__logo__simon">
+            <p>SIMON</p>
+            <p>SAYS</p>
+          </span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app__footer">
+      <section>
+        <span>Created by Agustin Di Benedetto</span>
+      </section>
+      <section>
+        <a class="app__footer__link" href="https://www.linkedin.com/in/agustin-di-benedetto-7509071ba/" target="_blank"
+          rel="noreferer">Linkedin</a>
+        <span>|</span>
+        <a class="app__footer__link" href="https://github.com/Agusdben" target="_blank" rel="noreferer">Github</a>
+      </section>
+    </footer>
+  </div>
+  <div id="modal" class="modal">
+  </div>
+  <audio id="audio-music" loop autoplay>
+    <source src="./songs/main-theme.mp3" type="audio/mp3">
+  </audio>
+  <audio id="audio-sfx" autoplay>
+    <source id="source-sfx" src="" type="audio/mp3">
+  </audio>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>

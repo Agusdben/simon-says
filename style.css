@@ -1,0 +1,176 @@
+:root {
+  --font-color: #e3e3e3;
+  --primary-color: #3d3a84;
+  --background-color: radial-gradient(var(--primary-color), #000);
+  --color-green: rgb(0, 150, 0);
+  --color-red: hsl(0, 100%, 29%);
+  --color-yellow: hsl(60, 100%, 29%);
+  --color-blue: rgb(0, 82, 150);
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--background-color);
+  color: var(--font-color);
+}
+
+p {
+  margin: 0;
+}
+
+.btn {
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  transition: transform 300ms linear;
+}
+
+.btn--primary {
+  background: var(--primary-color);
+  color: var(--font-color);
+  width: fit-content;
+  min-width: 70px;
+}
+
+.btn--rounded {
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+
+.btn:hover {
+  filter: contrast(30%);
+}
+
+.btn--green {
+  background-color: var(--color-green);
+  clip-path: polygon(40% 0, 100% 0, 100% 100%, 0 100%, 0 40%);
+
+}
+
+.btn--red {
+  background-color: var(--color-red);
+  clip-path: polygon(60% 0, 100% 40%, 100% 100%, 0 100%, 0 0);
+}
+
+.btn--yellow {
+  background-color: var(--color-yellow);
+  clip-path: polygon(100% 0, 100% 100%, 40% 100%, 0 60%, 0 0);
+}
+
+.btn--blue {
+  background-color: var(--color-blue);
+  clip-path: polygon(100% 0, 100% 60%, 60% 100%, 0 100%, 0 0);
+}
+
+.app {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  overflow-y: auto;
+  grid-template-rows: 70px 1fr 70px;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+.app__header {
+  grid-area: header;
+}
+
+.app__main {
+  grid-area: main;
+  display: grid;
+}
+
+.app__main__header {
+  display: grid;
+}
+
+.simon {
+  aspect-ratio: 1/1;
+  width: 100%;
+  max-width: 500px;
+  min-width: 300px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  overflow: hidden;
+  padding: 1rem;
+  gap: 1rem;
+  position: relative;
+}
+
+.simon__button {}
+
+.simon__logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  aspect-ratio: 1/1;
+  width: 170px;
+  display: grid;
+  place-content: center;
+  background: #111;
+  padding: 1rem;
+  border-radius: 50%;
+  text-transform: uppercase;
+}
+
+.simon__logo__play {
+  animation: pulse 2s linear infinite;
+  text-transform: uppercase;
+  padding: .5rem;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.simon__logo__simon {
+  display: none;
+  text-align: center;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.app__footer {
+  grid-area: footer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.app__footer__link {
+  color: var(--primary-color);
+}
+
+.app__footer__link:hover {
+  transition: filter 200ms linear;
+  filter: brightness(200%);
+}
