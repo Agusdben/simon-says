@@ -179,7 +179,7 @@ p {
 }
 
 .simon__logo__play {
-  animation: pulse 2s linear infinite;
+  animation: pulse 1.5s linear infinite;
   text-transform: uppercase;
   padding: .5rem;
   font-weight: bold;
@@ -200,7 +200,7 @@ p {
   }
 
   50% {
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
 }
 
